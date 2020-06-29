@@ -24,3 +24,21 @@ PopupMenuButton<WhyFarther>(
     ),
   ],
 )
+
+  PopupMenuButton<int>(
+    itemBuilder: (context) => [
+      PopupMenuItem(
+        value: 1,
+        child: Text("Bir adet ekle"),
+      ),
+      PopupMenuItem(
+        value: 2,
+        child: Text("Dosyadan ekle"),
+      ),
+    ],
+    onSelected: (value) {
+      if (value == 1) addSingleItem();
+      if (value == 2) addItemsFromFile();
+    },
+    icon: Icon(Icons.menu),
+  )
